@@ -12,9 +12,11 @@ public class jBasics {
         return numbers[42];
     }
 
-    public static void TBD(){
+    public static void manipulateData(){
         String newString = "33";
-        int x = Integer.parseInt(newString);  //turn a string into an integer
+        int AYY = Integer.parseInt(newString);  //turn a string into an integer
+        String title = "Game of Thrones";
+        int BEE = title.charAt(8); //gets the character at the 8th index of the string
     }
 
     public static void basicInput(){
@@ -33,19 +35,38 @@ public class jBasics {
         frame.setVisible(true);  //make the window visible
     }
 
-    public static void basicObjectCreator(){
-        Pokemon charizard = new Pokemon();  //creates a new Pokemon object using the Pokemon.java file that we have in the same folder as this file
-        charizard.setName("Charizard");
-        charizard.setLevel(4);  //references the setLevel method in our charizard object that we just created
+    public static void basicTryCatch(){
+        try {  //will run the below code
+            int[] myNumbers = {1,2,3};
+            System.out.println(myNumbers[10]);
+        }catch(Exception e){  //if the above code returns an error, the below code will run
+            System.out.println("Something went wrong");
+        }finally{  //will execute after try...catch, regardless of the result
+            System.out.println("The 'try catch' is finished.");
+        }
+    }
+
+    public static void throwKeyword(int age){  //throw will actually show up as an error. Instead of just printing to the console.
+        if(age<18){
+            throw new ArithmeticException("Access Denied - Must be at least 18 years old");
+        }else{
+            System.out.println("Access Granted");
+        }
+    }
+
+    public static void basicObjectCreator(String name,int level,String type){
+        Pokemon charizard = new Pokemon("Red");  //creates a new Pokemon object using the Pokemon.java file that we have in the same folder as this file
+        charizard.setName(name);
+        charizard.setLevel(level);  //references the setLevel method in our charizard object that we just created
         charizard.setCaught(true);
-        charizard.setType("Fire, Dragon");
-        System.out.println("The name of this Pokemon is " + charizard.getName());
-        System.out.println(charizard.getName() + " is level " + charizard.getLevel());  //references the getLegs method that returns the number of legs
+        charizard.setType(type);
+        System.out.println("The name of this Pokemon is " + charizard.getName());  //references the getName method that returns the name variable of the pokemon object
+        System.out.println(charizard.getName() + " is level " + charizard.getLevel());
         System.out.println("Have you caught this pokemon?: " + charizard.getCaught());
         System.out.println(charizard.getName() + " is a " + charizard.getType() + " type");
     }
 
     public static void main(String[] args){
-        basicObjectCreator();
+        basicObjectCreator("Charizard",28,"Fire, Dragon");
     }
 }

@@ -55,7 +55,7 @@ public class jBasics {
     }
 
     public static void basicObjectCreator(String name,int level,String type){
-        Pokemon charizard = new Pokemon("Red");  //creates a new Pokemon object using the Pokemon.java file that we have in the same folder as this file
+        Pokemon charizard = new Pokemon();  //creates a new Pokemon object using the Pokemon.java file that we have in the same folder as this file
         charizard.setName(name);
         charizard.setLevel(level);  //references the setLevel method in our charizard object that we just created
         charizard.setCaught(true);
@@ -67,6 +67,6 @@ public class jBasics {
     }
 
     public static void main(String[] args){
-        basicObjectCreator("Charizard",28,"Fire, Dragon");
+        System.out.println((char)48);;
     }
 }

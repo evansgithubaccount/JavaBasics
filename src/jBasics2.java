@@ -14,9 +14,6 @@ public class jBasics2 {
         System.out.println("Current Date: " + ft.format(date));
     }
 
-    public static void callTest(){
-        Albatross tweety = new Albatross();
-    }
 
     public static void main(String[] args){
         dateDemo();

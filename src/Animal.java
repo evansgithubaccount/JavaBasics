@@ -1,6 +1,7 @@
-public class Animal {
-    int age;
-    public void setAge(int age){
+
+class Animal {
+    private int age;
+    void setAge(int age){
         this.age = age;
     }
     public int getAge(){
@@ -8,32 +9,32 @@ public class Animal {
     }
 }
 
-class Bird extends Animal{
-    int eggs;
-    public void setEggs(int eggs){
+class Bird extends Animal{  //'extends Animals' means that 'Bird' will be able to access all of the methods and variables inside of 'Animal'
+    private int eggs;  //Bird has its own variable 'eggs' that Animal doesn't have.
+
+    void setEggs(int eggs){
         this.eggs = eggs;
     }
-    public int getEggs(){
+    int getEggs(){
         return eggs;
     }
 }
 
-class Albatross extends Bird{
+class Albatross extends Bird{  //Albatross will be able to access all of the methods and variables inside of Bird and Animal
     public static void main(String[] args){
-        Animal a = new Animal();
-        Bird b = new Bird();
-        Albatross alb = new Albatross();
+        Albatross alb = new Albatross();  //create a new Albatross object
 
-        alb.setAge(5);
-        alb.setEggs(3);
+        alb.setAge(5); //we use the setAge() method from the 'Animal' class
+        alb.setEggs(3);  //we use the setEggs() method from the 'Bird' class
+
         int age = alb.getAge();
         int eggs = alb.getEggs();
 
         System.out.println("This albatross is " + age + " years old");
         System.out.println("This albatross has laid " + eggs + " eggs");
-
-        System.out.println(b instanceof Animal);
-        System.out.println(alb instanceof Bird);
-        System.out.println(alb instanceof Animal);
     }
+}
+
+class Pig extends Animal{  //Pig will be able to access the methods and variables inside of Animal, but not the ones inside of Bird
+
 }
